@@ -147,21 +147,23 @@ export default function Home() {
       {/* Ad Banner 1 */}
       <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-2xl overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-700 p-8 md:p-12">
+          <div className="relative rounded-2xl overflow-hidden bg-gradient-to-r from-red-600 to-orange-600 p-8 md:p-12">
             <div className="relative z-10 max-w-xl">
               <span className="inline-block px-3 py-1 text-xs font-semibold bg-white/20 rounded-full text-white mb-4">
-                Sponsored
+                Featured City
               </span>
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                Get Your China Visa Fast
+                Beijing - China&apos;s Ancient Capital
               </h3>
-              <p className="text-blue-100 mb-6">
-                Apply for your Chinese tourist visa online with our trusted partner. Fast processing, 24/7 support.
+              <p className="text-red-100 mb-6">
+                Discover the Great Wall, Forbidden City, and Temple of Heaven. Experience authentic Peking Duck and explore 3,000 years of imperial history.
               </p>
-              <Button className="bg-white text-blue-700 hover:bg-blue-50">
-                Learn More
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
+              <Link href="/cities/beijing">
+                <Button className="bg-white text-red-700 hover:bg-red-50">
+                  Explore Beijing
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </Link>
             </div>
             <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-white/10 to-transparent" />
           </div>
