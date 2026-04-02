@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -43,7 +43,7 @@ interface Itinerary {
   estimatedBudget?: string;
 }
 
-export default function ItineraryPage() {
+function ItineraryContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [selectedCity, setSelectedCity] = useState(searchParams.get('city') || '');
@@ -498,5 +498,17 @@ export default function ItineraryPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function ItineraryPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+        <Loader2 className="w-8 h-8 animate-spin text-amber-500" />
+      </div>
+    }>
+      <ItineraryContent />
+    </Suspense>
   );
 }
